@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptDescarga</title>
+</head>
+<body>
+    <h1>ScriptDescarga</h1>
+    <button onclick="descargarArchivo()">Descargar</button>
+
+    <script>
+        function descargarArchivo() {
+            const url = "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz";
+            const nombreArchivo = "clinvar.vcf.gz";
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = nombreArchivo;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
